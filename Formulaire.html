@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Forms</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+    th, td {
+      min-width: 300px;
+      text-align: left;
+      vertical-align: top	
+    }
+</style>
+
+<script src="MesFonctionsJavascript.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Web Forms</h1>
+        </header>
+        <div class="form">
+            <form id="userform" action="#" method="get" >
+            
+                <p class="caption">
+                    <label for="username">Nom</label>
+                </p>
+                <p>
+                    <input type="text" id="username" name="username" placeholder="Entrer votre nom" required autofocus autocomplete="on">
+                </p>
+
+                First Name: <input type="text" id="firstname"><br>
+
+                <p class="caption">
+                    <label for="userpassword">Mot de Passe</label>
+                </p>
+                <p>
+                    <input type="password" id="userpassword" name="userpassword" pattern="[\w]{8,}">
+                </p>
+
+                <fieldset>
+                    <legend>Genre</legend>
+            
+                    <label for="male">Masculin</label> 
+                    <input type="radio" id="male" name="gender" value="male">
+                
+                    <label for="female">Feminin</label>
+                    <input type="radio" id="female" name="gender" value="female">
+
+                    <label for="othergender">Autre genre</label>
+                    <input type="radio" id="other" name="gender" value="othergender">
+
+                </fieldset>
+
+                <p class="caption">
+                    <label for="resstatus">Statut du résident</label>
+                </p>
+                <p>  
+                    <select id="resstatus" name="resstatus">      
+                    <option value="Citizen">Citoyen</option>
+                    <option value="ResPerm">Resident Permanent</option>
+                    <option value="Foreigner">Etranger</option>
+                    </select> 
+                </p>
+                
+                <p class="caption">
+                    <label for="aboutme">A propos de moi</label>
+                </p>
+                <p>
+                    <textarea id="aboutme" name="aboutme" rows="10" cols="30"></textarea>
+                </p> 
+                
+                <p class="caption">
+                <label for="useremail">Mail</label>
+                </p>
+                <p>
+                <input type="email" id="useremail" name="useremail">
+                </p>
+
+                <p class="caption">
+                    <label for="weblink">Web Lien</label>
+                </p>
+                <p>
+                    <input type="url" id="weblink" name="weblink">
+                </p>
+                        
+                <p class="caption">
+                    <label for="dateofbirth">Date de naissance</label>
+                </p>
+                <p>
+                    <input type="date" id="dateofbirth" name="dateofbirth">
+                </p>
+
+                <p class="caption">
+                    <label for="favoritecolor">Couleurs favories</label>
+                </p>
+                <p>
+                    <input type="color" id="favoritecolor" name="favoritecolor">
+                </p>
+
+                <p class="caption">
+                    <label for="hobbies">Hobbies</label>
+                </p>
+                <p>
+                    <input type="checkbox" class="hobbies" name="hobbies[]" value="coding">Coder<br>
+                    <input type="checkbox" class="hobbies" name="hobbies[]" value="reading">Lire<br>
+                    <input type="checkbox" class="hobbies" name="hobbies[]" value="swimming">Nager<br> 
+                    <input type="checkbox" class="hobbies" name="hobbies[]" value="jogging">Courir<br>
+                    <input type="checkbox" class="hobbies" name="hobbies[]" value="eating">Manger<br>
+                    <input type="checkbox" class="hobbies" name="hobbies[]" value="others">Autre hobby<br>
+                </p>
+        
+                <p class="caption">
+                    <label for="zodiac">Astrologie</label>
+                </p>
+                <input list="zodiac" name="zodiac">
+                <datalist id="zodiac">
+                    <option value="Aries / Belier">
+                    <option value="Taurus / Taureau">
+                    <option value="Gemini / Gemeaux ">
+                    <option value="Cancer">
+                    <option value="Leo / Lion">
+                    <option value="Virgo / Vierge">
+                    <option value="Libra / Balance">
+                    <option value="Scorpio / Sorpion">
+                    <option value="Sagittarius / Sagittaire">
+                    <option value="Capricorn / Capricorne">
+                    <option value="Aquarius/ Verseau">
+                    <option value="Pisces / Poisson">
+                </datalist>
+
+                <br/><br />
+                <input type="image" src="" alt="Texte remplacant Image" height="32" width="330">
+
+                <br />
+                <input type="range" id="rate" name="rate" min="1" max="5">
+
+                <br />
+                <input type="number" id="capacity" name="capacity" min="1" max="9" step="2">
+
+                <br /><br />
+                <p class="caption">
+                    <label for="portrait">Portrait</label>
+                </p>
+                <p>
+                    <input type="file" id="portrait" name="portrait">
+                </p>
+            
+                Upload photos: <input type="file" name="photos" multiple>
+
+                <br /><br />
+
+                <table>
+                    <tr>
+                    <th>Frame Data</th><th>Hand Data</th><th>Finger Data</th>
+                    </tr>
+                    <tr>
+                    <td id="frameData">Frame Data</td><td id="handData">Hand Data</td><td id="fingerData">Finger Data</td>
+                    </tr>
+                    
+                </table>
+            
+                
+                <br /><br />
+
+                <p>
+                    <input type="reset" class="bottom" value="Reset">
+                </p>
+                <p>
+                    <input type="submit" class="bottom" id="usersubmit" name="usersubmit" value="Sign up 1" onsubmit="alert(document.getElementById('firstname').value + document.getElementById('lastname').value);return false;">
+                    <input type="submit" formaction="MaPagePhp.php" value="Submit 2 page php">
+                    <input type="submit" formenctype="multipart/form-data" value="Submit 3 enctype">
+                    <input type="submit" formaction="MaPageASPX.aspx" formmethod="post" value="Submit 4 page aspx">
+                    <input type="submit" formnovalidate value="Submit 5 no validate">
+                </p>
+                <p>
+                    <button onclick="changeColor('blue');">Mettre le texte en bleu</button>
+                </p>
+                <p id="para">Some text here</p>
+                
+                <p>
+
+                    <button onclick="ajouterTexte();">Rempli le paragraphe ci-dessous</button>
+                </p>
+                <p id="remplirPara">
+
+                </p>
+               
+                </p>
+                <br /><br />
+      
+                <h1>Finding Me</h1>
+                <button onclick="getLocation()">Where am I?</button>
+                <p id="location"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        /*
+        var frameData = document.getElementById('frameData');
+
+        Leap.loop(function(frame){
+        // Add code to process the frame of tracked data
+        // Get and show frame data
+            frameData.innerHTML = "Frame ID: " + frame.id  + "<br>"
+            + "No of Hands: " + frame.hands.length + "<br>"
+            + "No of Fingers: " + frame.fingers.length + "";
+        })
+
+        */
+  
+       
+        
+
+        function ajouterTexte() {
+            var elem = document.getElementById('remplirPara');
+            elem.innerHTML = "ajout d'un texte";
+            //document.getElementById('remplirDiv').value="ajouter d'un texte";
+        }
+
+        function changeColor(newColor) {
+            var elem = document.getElementById('para');
+            elem.style.color = newColor;
+        }
+
+        
+
+
+
+
+        
+
+        function getLocation(){
+        // Check whether browser supports Geolocation API or not
+            if (navigator.geolocation) { // Supported
+            
+                var positionOptions = {
+                timeout : Infinity,
+                maximumAge : 0,
+                enableHighAccuracy : true
+                }
+
+                navigator.geolocation.getCurrentPosition(getPosition, catchError, positionOptions);
+                // watchID = navigator.geolocation.watchPosition(getPosition, catchError, positionOptions);
+
+                
+            } else { // Not supported
+                alert("Oops! This browser does not support HTML Geolocation.");
+            }
+        }
+
+        function getPosition(position){
+        document.getElementById("location").innerHTML = 
+            "Latitude: " + position.coords.latitude + "<br>" +
+            "Longitude: " + position.coords.longitude;
+        }
+
+        function catchError(positionError) {
+            switch(positionError.code) {
+                case positionError.TIMEOUT:
+                alert("The request to get user location has aborted as it has taken too long.");
+                break;
+                case positionError.POSITION_UNAVAILABLE:
+                alert("Location information is not available.");
+                break;
+                case positionError.PERMISSION_DENIED:
+                alert("Permission to share location information has been denied!");
+                break;
+                default:
+                alert("An unknown error occurred.");
+            }
+        }
+
+
+    </script>
+</body>
+</html>
